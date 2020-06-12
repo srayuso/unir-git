@@ -1,3 +1,9 @@
+"""
+License: MIT
+Organization: UNIR
+"""
+
+
 def sort_list(items, ascending=True):
     if not isinstance(items, list):
         raise RuntimeError(f"No puede ordenar {type(items)}")
