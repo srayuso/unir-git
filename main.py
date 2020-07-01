@@ -4,8 +4,9 @@ Organization: UNIR
 """
 
 import os
+import sys
 
-FILENAME = "words.txt"
+DEFAULT_FILENAME = "words.txt"
 
 
 def sort_list(items, ascending=True):
@@ -16,13 +17,22 @@ def sort_list(items, ascending=True):
 
 
 if __name__ == "__main__":
-    file_path = os.path.join(".", FILENAME)
+    filename = DEFAULT_FILENAME
+    if len(sys.argv) == 2:
+        filename = sys.argv[1]
+    else:
+        print("Se debe indicar el fichero como primer argumento")
+        sys.exit(1)
+
+    print(f"Se leerán las palabras del fichero {filename}")
+    file_path = os.path.join(".", filename)
     if os.path.isfile(file_path):
         word_list = []
         with open(file_path, "r") as file:
             for line in file:
                 word_list.append(line.strip())
     else:
+        print(f"El fichero {filename} no existe")
         word_list = ["ravenclaw", "gryffindor", "slytherin", "hufflepuff"]
 
     print(sort_list(word_list))
