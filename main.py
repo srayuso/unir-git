@@ -14,6 +14,7 @@ def sort_list(items, ascending=True):
 
     return sorted(items, reverse=(not ascending))
 
+HELLO = "1'"
 
 if __name__ == "__main__":
     file_path = os.path.join(".", FILENAME)
