@@ -28,10 +28,9 @@ if __name__ == "__main__":
         filename = sys.argv[1]
         remove_duplicates = sys.argv[2].lower() == "yes"
     else:
-        print("Se debe indicar el fichero como primer argumento")
-        print(
-            "El segundo argumento debe indicar si se deben eliminar palabras repetidas"
-        )
+        print("""python3 main.py <filename> <dup>
+  filename: **ruta** al fichero que contiene la lista de palabras, una por línea
+  dup: **yes|no**, yes para eliminar palabras duplicadas, no para mantener la lista""")
         sys.exit(1)
 
     print(f"Se leerán las palabras del fichero {filename}")
