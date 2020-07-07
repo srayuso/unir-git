@@ -18,6 +18,8 @@ def sort_list(items, ascending=True):
 
 
 def remove_duplicates_from_list(items):
+    if not isinstance(items, list):
+        raise RuntimeError(f"No pueden quitar duplicados de {type(items)}")
     return list(set(items))
 
 
@@ -48,4 +50,3 @@ if __name__ == "__main__":
         word_list = remove_duplicates_from_list(word_list)
 
     print(sort_list(word_list))
-
