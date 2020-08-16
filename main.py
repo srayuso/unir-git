@@ -15,6 +15,10 @@ def sort_list(items, ascending=True):
     return sorted(items, reverse=(not ascending))
 
 
+def to_uppercase(items):
+    return [word.upper() for word in items]
+
+
 if __name__ == "__main__":
     file_path = os.path.join(".", FILENAME)
     if os.path.isfile(file_path):
@@ -25,4 +29,4 @@ if __name__ == "__main__":
     else:
         word_list = ["ravenclaw", "gryffindor", "slytherin", "hufflepuff"]
 
-    print(sort_list(word_list))
+    print(to_uppercase(sort_list(word_list)))
