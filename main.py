@@ -16,7 +16,7 @@ def sort_list(items, ascending=True):
 
 
 def to_uppercase(items):
-    return [word.upper() for word in items]
+    return [word.upper() for word in items if word is not None]
 
 
 if __name__ == "__main__":
